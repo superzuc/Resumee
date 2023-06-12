@@ -1,0 +1,46 @@
+.line1-Who {
+  width: 100%;
+  height: 150px;
+  background-image: url("../images/japanStreet.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.WhoAmI {
+  margin-top: 250px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+
+  @include onPhone {
+    flex-direction: column;
+    margin-top: 100px;
+    padding: 0 30px;
+  }
+
+  &__img {
+    background-image: url("../images/hazzollodoro_digital_art_retro-anime_style_ad212d61-5a0a-480b-915b-5382d49e675b.png");
+    width: 300px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+
+    @include onLaptop {
+      width: 600px;
+      height: 600px;
+    }
+  }
+
+  &__description {
+    width: 50%;
+    line-height: 24px;
+
+    @include onPhone {
+      margin-top: 60px;
+      width: 100%;
+    }
+  }
+}

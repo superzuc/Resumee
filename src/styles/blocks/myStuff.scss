@@ -1,0 +1,64 @@
+.line3 {
+  background-image: url(../images/japan-street3.png);
+  margin-top: 300px;
+
+  @include onPhone {
+    position: relative;
+    bottom: 100px;
+    margin-top: 0;
+  }
+}
+
+.MyStuff {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+
+  @include onPhone {
+    margin-top: 40px;
+  }
+
+
+  &__gitHubLogo {
+    width: 250px;
+    height: 250px;
+    background-image: url(../images/github-mark.png);
+    background-size: cover;
+    background-position: center;
+    margin-right: 150px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
+
+    @include onPhone {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include onIPhone {
+      width: 50px;
+      height: 50px;
+      margin-right: 50px;
+    }
+  }
+
+  &__description {
+    width: 300px;
+
+    @include onPhone {
+      width: 200px;
+    }
+
+    &-span {
+      text-decoration: none;
+      font-weight: 1000;
+      color: black;
+    }
+  }
+}

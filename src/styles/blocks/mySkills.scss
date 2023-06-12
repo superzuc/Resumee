@@ -1,0 +1,325 @@
+.line2 {
+  background-image: url(../images/japan-street2.png);
+  margin-top: 160px;
+}
+
+.line2-MySkills {
+  height: 100vh;
+  width: 100%;
+  margin-top: 200px;
+  background-image: url("../images/meInVenice.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+
+
+
+  &__button {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    text-decoration: none;
+    font-weight: 1000;
+    font-size: 152px;
+    letter-spacing: 100px;
+
+    @include onPhone {
+      font-size: 100px;
+      letter-spacing: 50px;
+    }
+
+    @include onIPhone {
+      font-size: 40px;
+      letter-spacing: 10px;
+    }
+
+    &:hover {
+      color: greenyellow;
+    }
+
+    &:active {
+      color: red;
+    }
+
+  @include onPhone {
+    font-size: 40px;
+  }
+  }
+
+}
+
+.MySkills {
+  position: absolute;
+  padding: 80px;
+  transform: translateX(-100%);
+  margin-top: 450px;
+
+  visibility: hidden;
+
+
+  @include onPhone {
+    margin-top: 0;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  @include onIPhone {
+    margin-top: 0;
+    padding: 0;
+    margin: 5px;
+  }
+
+
+
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid lightgray;
+    transition: all 0.6s;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 5px 10px #bab8b8;
+
+
+    @include onIPhone {
+      padding: 0;
+      max-width: 90px;
+    }
+
+    &-title {
+      position: relative;
+      top: 50%;
+      text-align: center;
+      font-family: $header-font;
+      font-size: 18px;
+      font-weight: bolder;
+      transition: all 1s;
+
+      @include onPhone {
+        font-size: 12px;
+      }
+
+      @include onIPhone {
+        font-size: 10px;
+        margin: 0 5px;
+      }
+    }
+
+    &-description {
+      font-size: 10px;
+      font-family: 'Inter';
+      visibility: hidden;
+
+      @include onPhone {
+        font-size: 8px;
+      }
+
+      @include onIPhone {
+        font-size: 5px;
+        line-height: 8px;
+        margin: 5px;
+
+      }
+    }
+
+    &-image {
+      grid-row: 2 / span 3;
+      background-image: url("../images/venezia____astronauts.webp");
+      background-size: cover;
+      background-position: center;
+      border-radius: 80%;
+      transition: all 0.5s;
+
+      @include onPhone {
+        display: none;
+      }
+
+
+
+      &:hover {
+        transform: scale(1.5);
+        background-image: url(../images/astronauts.png.png);
+
+        @include onPhone {
+          border-radius: 100%;
+          transform: scale(1.2);
+        }
+
+        @include onIPhone {
+          transform: scale(1.1);
+        }
+      }
+
+
+      &:hover &-coursesList {
+        transform: translateX(0);
+      }
+
+    }
+
+    &-coursesList {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      visibility: hidden;
+
+      &--title {
+        font-family: $header-font;
+        font-size: 18px;
+        margin: 0 0 10px;
+
+        @include onPhone {
+          font-size: 12px;
+
+        }
+      }
+
+      &--course {
+        font-family: 'Inter';
+        font-size: 12px;
+        color: black;
+        max-width: 300px;
+
+        @include onPhone {
+          font-size: 6px;
+          margin-right: 10px;
+        }
+      }
+
+      &--link {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+
+        @include onPhone {
+          font-size: 12px;
+        }
+      }
+
+    }
+
+    &:hover &-coursesList {
+      visibility: visible;
+    }
+
+
+    &:hover {
+      transform: scale(1.5);
+      border: 1px solid black;
+      box-shadow: none;
+
+      @include onPhone {
+        transform: scale(1.2);
+      }
+
+    }
+
+    &:hover &-description {
+      visibility: visible;
+      transition: all 1s;
+    }
+
+    &:hover &-title {
+      top: 0;
+    }
+
+    &:hover &-image {
+      background-image: url("../images/venice__transparent.png");
+    }
+
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 80px;
+  row-gap: 40px;
+
+  @include onPhone {
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 20px;
+  }
+
+  @include onIPhone {
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+
+  &__item {
+    @for $start from 1 through 4 {
+      @for $end from $start through 4 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end};
+      }
+    }
+  }
+}
+
+}
+
+.MySkills__card-image:hover .MySkills__card-coursesList {
+  visibility: visible;
+  transition: 0.5
+}
+
+@include onPhone {
+  .react {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
+  .ux {
+    grid-row: 3;
+  }
+
+  .audio {
+    grid-column: 2 / 3;
+    grid-row: 3;
+  }
+}
+
+.onPhone {
+  display: inherit;
+  grid-row: 5;
+  width: 300px;
+  height: 300px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transform: translateX(300%);
+  justify-self: center;
+
+
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+  @include onLaptop {
+    display: none;
+  }
+}
+
+

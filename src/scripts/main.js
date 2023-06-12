@@ -16,20 +16,20 @@ buttons.forEach(function(button) {
     container.style.marginTop = '300px';
     lineSkills2.style.marginTop = '800px';
 
-    if (window.matchMedia('(max-width: 900px)').matches) {
+    if (window.matchMedia('(max-width: 1000px)').matches) {
       container.style.marginTop = '600px';
       skills.style.marginTop = '400px';
       lineSkills2.style.marginTop = '300px';
     }
 
     if (window.matchMedia('(max-width: 500px)').matches) {
-      container.style.marginTop = '900px';
-      lineSkills2.style.marginTop = '300px';
-      skills.style.marginTop = '800px';
+      container.style.marginTop = '600px';
+      lineSkills2.style.marginTop = '200px';
+      skills.style.marginTop = '300px';
     }
 
     if (window.matchMedia('(max-width: 400px)').matches) {
-      container.style.marginTop = '900px';
+      container.style.marginTop = '500px';
     }
   });
 });
